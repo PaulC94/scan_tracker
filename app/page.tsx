@@ -53,7 +53,9 @@ export default function MangaTracker() {
     const handleLogin = async () => {
         await supabase.auth.signInWithOAuth({
             provider: 'google',
-            options: { redirectTo: `${window.location.origin}/auth/callback` },
+            options: {
+                redirectTo: `${window.location.origin}`
+            },
         });
     };
 
